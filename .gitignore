@@ -6,3 +6,16 @@
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Node
+node_modules/
+
+# Build output — déployé via GitHub Actions
+dist/
+
+# Debug / test screenshots
+*.png
+*.bak
+
+# CSS extraits (temporaires)
+extracted-style-*.css
