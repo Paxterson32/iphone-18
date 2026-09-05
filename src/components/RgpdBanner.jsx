@@ -22,8 +22,7 @@ export default function RgpdBanner() {
   return (
     <div id="rgpd-banner" role="dialog" aria-modal="false" aria-label="Gestion des données personnelles">
       <p>
-        Ce site collecte votre adresse email pour vous alerter de la disponibilité de l'iPhone 18 sur Amazon.
-        En tant que partenaire Amazon, des clics vers Amazon.fr peuvent être mesurés.{' '}
+        Ce site collecte votre adresse email pour vous informer en priorité de la disponibilité de l'iPhone 18.{' '}
         <a href="#mentions-legales">Politique de confidentialité</a>
       </p>
       <div id="rgpd-btns">

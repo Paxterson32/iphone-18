@@ -14,7 +14,7 @@ const CMP_ROWS = [
   { label: 'Poids',          pro: 205, promax: 243, fmtPro: '205 g', fmtPromax: '243 g' },
 ]
 
-export default function Choix({ affiliate }) {
+export default function Choix() {
   useEffect(() => {
     // Swatches
     const swatches = document.querySelectorAll('.swatch')
@@ -155,13 +155,10 @@ export default function Choix({ affiliate }) {
           </div>
         </div>
 
-        {/* CTAs */}
+        {/* CTA */}
         <div className="choix-cta reveal" style={{ marginTop: '2.4rem', justifyContent: 'center' }}>
-          <a className="btn btn-solid btn-buy" id="buy-pro" href={affiliate.pro} rel="nofollow sponsored" target="_blank">
-            Précommander le Pro sur Amazon
-          </a>
-          <a className="btn btn-ghost" id="buy-promax" href={affiliate.proMax} rel="nofollow sponsored" target="_blank">
-            Précommander le Pro Max →
+          <a className="btn btn-solid btn-buy" href="#offre">
+            M'alerter à la sortie →
           </a>
         </div>
       </div>

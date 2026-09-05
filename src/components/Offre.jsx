@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 const FORMSPREE_ID = 'YOUR_FORMSPREE_ID' // Replace with real Formspree form ID
 
-export default function Offre({ affiliate }) {
+export default function Offre() {
   const [status, setStatus] = useState('idle') // idle | loading | success | error
 
   const handleSubmit = async (e) => {
@@ -27,7 +27,7 @@ export default function Offre({ affiliate }) {
       <div className="offre-inner">
         <span className="eyebrow" style={{ justifyContent:'center' }}>Offre</span>
         <h2>Soyez prêt dès l'ouverture des précommandes.</h2>
-        <p>Recevez en priorité : l'alerte Amazon dès que les précommandes ouvrent, notre comparatif final Pro vs Pro Max, et les meilleures configurations selon votre budget.</p>
+        <p>Dès que la date de lancement est confirmée, vous recevez en avant-première : notre comparatif final Pro vs Pro Max, les meilleures configurations selon votre budget, et le lien de précommande dès son ouverture.</p>
         <div className="offre-perks">
           {['Recommandation personnalisée', 'Alertes en avant-première', 'Offres réservées'].map(perk => (
             <span key={perk}>
@@ -38,7 +38,7 @@ export default function Offre({ affiliate }) {
         </div>
 
         {status === 'success' ? (
-          <p className="offre-confirm">Merci — votre recommandation arrive par email.</p>
+          <p className="offre-confirm">Merci — vous serez alerté en priorité lors du lancement.</p>
         ) : (
           <form className="offre-form" id="offre-form" onSubmit={handleSubmit}>
             <label htmlFor="offre-email" className="visually-hidden">Adresse email</label>
@@ -54,14 +54,6 @@ export default function Offre({ affiliate }) {
           </p>
         )}
 
-        <div className="offre-buy">
-          <a className="btn btn-solid btn-buy" href={affiliate.pro} rel="nofollow sponsored" target="_blank">
-            Précommander le Pro sur Amazon
-          </a>
-          <a className="btn btn-ghost" href={affiliate.proMax} rel="nofollow sponsored" target="_blank">
-            Précommander le Pro Max →
-          </a>
-        </div>
       </div>
     </section>
   )

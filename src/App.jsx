@@ -25,12 +25,6 @@ import Offre from './components/Offre'
 import Footer from './components/Footer'
 import RgpdBanner from './components/RgpdBanner'
 
-// Affiliate links — replace with real Amazon Associate URLs
-const AFFILIATE = {
-  pro: 'https://www.amazon.fr/dp/B0EXAMPLE1?tag=YOURTAG-21',
-  proMax: 'https://www.amazon.fr/dp/B0EXAMPLE2?tag=YOURTAG-21',
-}
-
 export default function App() {
   // Mouse glow follower
   useEffect(() => {
@@ -110,14 +104,14 @@ export default function App() {
       <LaunchStrip />
       <AffiliateNotice />
       <NavRail />
-      <FloatCta affiliate={AFFILIATE} />
+      <FloatCta />
       <main>
         <Hero />
         <Signal />
         <Mouvement />
         <Matiere />
         <Finitions />
-        <Choix affiliate={AFFILIATE} />
+        <Choix />
         <Vision />
         <Createurs />
         <Moteur />
@@ -127,10 +121,10 @@ export default function App() {
         <Connexion />
         <Communaute />
         <Voix />
-        <Prix affiliate={AFFILIATE} />
+        <Prix />
         <FAQ />
         <Reassurance />
-        <Offre affiliate={AFFILIATE} />
+        <Offre />
       </main>
       <Footer />
       <RgpdBanner />

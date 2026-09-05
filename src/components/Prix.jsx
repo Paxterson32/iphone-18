@@ -27,7 +27,7 @@ const PLANS = [
   },
 ]
 
-export default function Prix({ affiliate }) {
+export default function Prix() {
   return (
     <section id="prix" className="section-paper">
       <div className="wrap">
@@ -72,18 +72,16 @@ export default function Prix({ affiliate }) {
                 ))}
               </ul>
               <a
-                href={plan.id === 'pro' ? affiliate.pro : affiliate.proMax}
-                rel="nofollow sponsored"
-                target="_blank"
+                href="#offre"
                 className="btn btn-solid btn-buy"
                 style={{ display:'block', textAlign:'center', marginTop:'1.6rem', borderRadius:100 }}>
-                Précommander sur Amazon
+                Être alerté à la sortie →
               </a>
             </div>
           ))}
         </div>
         <p className="reveal" style={{ marginTop:'1.8rem', fontSize:'.74rem', color:'var(--ash)', fontFamily:'var(--f-mono)' }}>
-          * Estimations avant annonce officielle. Amazon applique automatiquement le prix le plus bas entre la précommande et la livraison.
+          * Estimations avant annonce officielle. Prix définitifs communiqués par Apple lors du lancement.
         </p>
       </div>
     </section>

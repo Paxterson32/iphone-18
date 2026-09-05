@@ -795,4 +795,13 @@ body::before{
 @media(max-width:680px){
   nav#rail{background:rgba(8,6,16,.88);backdrop-filter:blur(20px) saturate(180%);
     -webkit-backdrop-filter:blur(20px) saturate(180%);border-top:1px solid rgba(200,169,109,.12);}
+  /* Compact RGPD banner on mobile */
+  #rgpd-banner{padding:.65rem 1rem;gap:.4rem;}
+  #rgpd-banner p{font-size:.72rem;flex:1 1 100%;line-height:1.4;margin-bottom:.2rem;}
+  #rgpd-btns{width:100%;justify-content:flex-end;}
+  #rgpd-accept,#rgpd-decline{padding:.38rem .85rem;font-size:.72rem;}
+  /* Float CTA compact on mobile */
+  #floatcta{padding:.7rem 1rem;gap:.6rem;flex-wrap:nowrap;}
+  #floatcta span{font-size:.72rem;}
+  #floatcta a{font-size:.75rem;padding:.45rem .9rem;white-space:nowrap;}
 }

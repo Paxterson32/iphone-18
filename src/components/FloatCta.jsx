@@ -1,9 +1,9 @@
-export default function FloatCta({ affiliate }) {
+export default function FloatCta() {
   return (
     <div id="floatcta">
-      <span>Précommandez sur Amazon dès l'ouverture</span>
-      <a id="cta-pro" href={affiliate.pro} rel="nofollow sponsored" target="_blank">
-        Précommander →
+      <span>Soyez alerté dès l'ouverture des précommandes</span>
+      <a id="cta-pro" href="#offre">
+        M'alerter →
       </a>
     </div>
   )
