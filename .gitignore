@@ -1,0 +1,8 @@
+# Documents internes — ne pas publier
+*.docx
+*.pdf
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
