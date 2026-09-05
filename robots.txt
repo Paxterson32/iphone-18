@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://VOTRE-DOMAINE.fr/sitemap.xml
+Sitemap: https://paxterson32.github.io/iphone-18/sitemap.xml
