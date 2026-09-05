@@ -27,6 +27,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,380;0,9..144,480;0,9..144,600;1,9..144,380;1,9..144,480&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<style>[x-cloak]{display:none!important;}</style>
 
 <script type="application/ld+json">
 {
@@ -51,8 +53,7 @@
 #affiliate-notice{width:100%;background:#1a1410;border-bottom:1px solid rgba(201,164,92,.18);padding:.45rem clamp(1rem,4vw,3rem);display:flex;align-items:center;justify-content:center;gap:.5rem;font-size:.72rem;color:#b0a898;text-align:center;flex-wrap:wrap;position:relative;z-index:55;}
 #affiliate-notice svg{flex-shrink:0;opacity:.7;}
 #affiliate-notice a{color:#d59aa6;text-decoration:underline;white-space:nowrap;}
-#rgpd-banner{position:fixed;bottom:0;left:0;right:0;z-index:200;background:#141315;border-top:1px solid rgba(243,239,231,.1);padding:1rem clamp(1rem,4vw,2.5rem);display:none;align-items:center;justify-content:space-between;gap:.9rem;flex-wrap:wrap;}
-#rgpd-banner.show{display:flex;}
+#rgpd-banner{position:fixed;bottom:0;left:0;right:0;z-index:200;background:#141315;border-top:1px solid rgba(243,239,231,.1);padding:1rem clamp(1rem,4vw,2.5rem);display:flex;align-items:center;justify-content:space-between;gap:.9rem;flex-wrap:wrap;}
 #rgpd-banner p{font-size:.8rem;color:#cfc8ba;flex:1 1 260px;line-height:1.55;}
 #rgpd-banner a{color:#d59aa6;text-decoration:underline;}
 #rgpd-btns{display:flex;gap:.6rem;flex-shrink:0;}
@@ -62,26 +63,29 @@
 
 <style>
 :root{
-  --ink:#0a0a0b;
-  --ink-2:#141315;
-  --paper:#f3efe7;
-  --paper-2:#e9e3d6;
-  --bone:#cfc8ba;
-  --line-dark:rgba(243,239,231,.14);
-  --line-light:rgba(10,10,11,.14);
-  --ash:#9a958a;
+  --ink:#080610;
+  --ink-2:#0f0c18;
+  --paper:#f7f3ed;
+  --paper-2:#ede8e0;
+  --bone:#c0b8ac;
+  --line-dark:rgba(247,243,237,.1);
+  --line-light:rgba(8,6,16,.12);
+  --ash:#8a847a;
 
-  --c-cherry:#8a2c3e;
-  --c-cherry-soft:#d59aa6;
-  --c-blue:#7f96b8;
-  --c-blue-soft:#c3d0e1;
-  --c-silver:#aaa79e;
-  --c-silver-soft:#e3e0d8;
-  --c-black:#4a4a4d;
-  --c-black-soft:#9a9a9c;
+  --c-cherry:#8c1c34;
+  --c-cherry-soft:#d07088;
+  --c-blue:#6a8eb4;
+  --c-blue-soft:#b6ccdf;
+  --c-silver:#a8a49c;
+  --c-silver-soft:#dedad2;
+  --c-black:#3c3c40;
+  --c-black-soft:#8c8c90;
 
   --accent: var(--c-cherry);
   --accent-soft: var(--c-cherry-soft);
+  --gold:#c8a96d;
+  --gold-soft:#e4c98a;
+  --gold-dim:rgba(200,169,109,.14);
 
   --f-display:'Fraunces', ui-serif, Georgia, serif;
   --f-body:'Instrument Sans', -apple-system, sans-serif;
@@ -89,6 +93,7 @@
 
   --ease: cubic-bezier(.16,.84,.32,1);
   --ease-soft: cubic-bezier(.4,0,.2,1);
+  --ease-bounce: cubic-bezier(.34,1.56,.64,1);
 }
 
 *{box-sizing:border-box; margin:0; padding:0; min-width:0;}
@@ -601,11 +606,208 @@ footer a:hover{ color:var(--paper); }
 #lightbox-close{ position:absolute; top:1.3rem; right:1.3rem; font-family:var(--f-mono); font-size:.72rem; letter-spacing:.1em; text-transform:uppercase;
   color:var(--paper); border:1px solid var(--line-dark); padding:.6rem 1.1rem; border-radius:100px; }
 #lightbox-close:hover{ border-color:var(--accent-soft); }
+
+/* ========================================
+   PREMIUM REDESIGN — new_changes
+   ======================================== */
+
+/* --- Grain texture overlay (ambient depth) --- */
+body::before{
+  content:'';
+  position:fixed;inset:0;z-index:9999;
+  pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size:200px 200px;
+  opacity:.028;
+  mix-blend-mode:overlay;
+}
+
+/* --- Launch strip --- */
+#launch-strip{
+  background:linear-gradient(90deg,var(--gold-dim),rgba(200,169,109,.06) 60%,var(--gold-dim));
+  border-bottom:1px solid rgba(200,169,109,.22);
+  padding:.38rem clamp(1rem,4vw,3rem);
+  text-align:center;
+  font-family:var(--f-mono);
+  font-size:.69rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--gold-soft);
+  position:relative;z-index:56;
+}
+#launch-strip span{
+  display:inline-flex;align-items:center;gap:.5rem;
+}
+#launch-strip strong{color:var(--gold);}
+
+/* --- Rail nav pill indicator --- */
+nav.rail .rail-pill{
+  display:inline-block;
+  background:var(--gold);
+  border-radius:100px;
+  height:.25rem;
+  width:1.6rem;
+  position:absolute;
+  bottom:.6rem;
+  left:50%;
+  transform:translateX(-50%);
+  opacity:0;
+  transition:opacity .3s var(--ease);
+}
+nav.rail a.active .rail-pill{opacity:1;}
+
+/* --- Hero ambient glow --- */
+.entree-stage::after{
+  content:'';
+  position:absolute;
+  inset:auto 0 -8rem 0;
+  height:20rem;
+  background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(140,28,52,.22) 0%,transparent 70%);
+  pointer-events:none;z-index:0;
+}
+
+/* --- Liquid metal buy buttons --- */
+.btn-buy, a[href*="amazon"].btn, .cta-btn{
+  background:linear-gradient(135deg,var(--gold) 0%,#a07840 40%,var(--gold-soft) 70%,var(--gold) 100%) !important;
+  background-size:200% 200% !important;
+  color:#0a0609 !important;
+  border:none !important;
+  font-weight:700 !important;
+  letter-spacing:.04em;
+  animation:shimmer-gold 4s ease infinite;
+  box-shadow:0 2px 24px rgba(200,169,109,.28),0 1px 0 rgba(255,255,255,.14) inset;
+  transition:transform .25s var(--ease-bounce),box-shadow .25s var(--ease);
+}
+.btn-buy:hover, a[href*="amazon"].btn:hover, .cta-btn:hover{
+  transform:translateY(-2px) scale(1.02);
+  box-shadow:0 8px 36px rgba(200,169,109,.38),0 1px 0 rgba(255,255,255,.2) inset;
+}
+@keyframes shimmer-gold{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* --- Price cards glassmorphism --- */
+#prix .card, .prix-card{
+  background:rgba(15,12,24,.72) !important;
+  backdrop-filter:blur(24px) saturate(160%);
+  -webkit-backdrop-filter:blur(24px) saturate(160%);
+  border:1px solid rgba(200,169,109,.16) !important;
+  border-radius:20px !important;
+  box-shadow:0 20px 60px rgba(0,0,0,.5),0 1px 0 rgba(247,243,237,.06) inset;
+  transition:transform .3s var(--ease-bounce),box-shadow .3s var(--ease);
+}
+#prix .card:hover, .prix-card:hover{
+  transform:translateY(-6px) scale(1.01);
+  box-shadow:0 32px 80px rgba(0,0,0,.6),0 0 0 1px rgba(200,169,109,.28),0 1px 0 rgba(247,243,237,.1) inset;
+}
+
+/* --- FAQ accordion premium style --- */
+#faq details{
+  border:1px solid rgba(200,169,109,.12);
+  border-radius:14px;
+  background:rgba(15,12,24,.55);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  overflow:hidden;
+  transition:border-color .3s var(--ease);
+}
+#faq details[open]{border-color:rgba(200,169,109,.3);}
+#faq summary{
+  cursor:pointer;
+  list-style:none;
+  padding:1.1rem 1.4rem;
+  font-weight:600;
+  font-family:var(--f-display);
+  font-size:1rem;
+  color:var(--paper);
+  display:flex;justify-content:space-between;align-items:center;
+  gap:1rem;
+}
+#faq summary::-webkit-details-marker{display:none;}
+#faq summary::after{
+  content:'+';
+  font-family:var(--f-mono);
+  font-size:1.1rem;
+  color:var(--gold);
+  flex-shrink:0;
+  transition:transform .3s var(--ease-bounce);
+}
+#faq details[open] summary::after{transform:rotate(45deg);}
+#faq .faq-body{padding:.2rem 1.4rem 1.2rem;color:var(--ash);font-size:.9rem;line-height:1.65;}
+
+/* --- Glassmorphism spec cards --- */
+.spec-card, .feature-card, .comparaison-card{
+  border:1px solid rgba(200,169,109,.1);
+  border-radius:18px;
+  background:rgba(15,12,24,.6);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  transition:transform .3s var(--ease-bounce),border-color .3s var(--ease);
+}
+.spec-card:hover, .feature-card:hover, .comparaison-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(200,169,109,.24);
+}
+
+/* --- Gold accent on headings --- */
+h2 em, h3 em{color:var(--gold);font-style:italic;}
+
+/* --- Section divider glow line --- */
+section+section::before{
+  content:'';
+  display:block;
+  width:min(160px,40%);
+  height:1px;
+  margin:0 auto;
+  background:linear-gradient(90deg,transparent,var(--gold-dim),transparent);
+  margin-bottom:0;
+}
+
+/* --- Mobile bottom nav polish --- */
+@media(max-width:680px){
+  nav.rail{
+    background:rgba(8,6,16,.88);
+    backdrop-filter:blur(20px) saturate(180%);
+    -webkit-backdrop-filter:blur(20px) saturate(180%);
+    border-top:1px solid rgba(200,169,109,.12);
+  }
+}
+
+/* --- RGPD banner premium --- */
+#rgpd-banner{
+  background:rgba(10,8,18,.95) !important;
+  backdrop-filter:blur(20px) saturate(160%);
+  -webkit-backdrop-filter:blur(20px) saturate(160%);
+  border-top:1px solid rgba(200,169,109,.18) !important;
+}
+#rgpd-accept{
+  background:linear-gradient(135deg,var(--gold),var(--gold-soft)) !important;
+  color:#0a0609 !important;
+  font-weight:700 !important;
+  border:none !important;
+}
+#rgpd-decline{
+  border-color:rgba(200,169,109,.2) !important;
+  color:var(--ash) !important;
+}
+
+/* --- Affiliate notice gold border --- */
+#affiliate-notice{
+  background:rgba(26,20,16,.96) !important;
+  border-bottom-color:rgba(200,169,109,.22) !important;
+}
 </style>
 </head>
 <body>
 
 <div id="glow" aria-hidden="true"></div>
+
+<!-- Launch strip -->
+<div id="launch-strip" aria-live="polite">
+  <span>&#9679; <strong>iPhone 18 — Lancement prévu en septembre 2025</strong> &nbsp;·&nbsp; Inscrivez-vous pour être alerté dès l'ouverture des précommandes</span>
+</div>
 
 <!-- Disclosure Amazon Associates — requis par les CGU Amazon et la DGCCRF -->
 <div id="affiliate-notice" role="note">
@@ -1709,33 +1911,31 @@ document.querySelectorAll('img').forEach(function(img){
 var heroImg = document.getElementById('entree-img');
 if(heroImg){ heroImg.fetchPriority = 'high'; heroImg.loading = 'eager'; }
 
-/* ---------- RGPD : consentement ---------- */
-(function(){
-  var banner = document.getElementById('rgpd-banner');
-  if(!banner) return;
-  if(!localStorage.getItem('rgpd_consent')) banner.classList.add('show');
-  document.getElementById('rgpd-accept').addEventListener('click', function(){
-    localStorage.setItem('rgpd_consent','accepted');
-    banner.classList.remove('show');
-  });
-  document.getElementById('rgpd-decline').addEventListener('click', function(){
-    localStorage.setItem('rgpd_consent','declined');
-    banner.classList.remove('show');
-    var emailInput = document.getElementById('offre-email');
-    var submitBtn = document.querySelector('#offre-form button[type="submit"]');
-    if(emailInput){ emailInput.disabled = true; emailInput.placeholder = 'Consentement requis'; }
-    if(submitBtn){ submitBtn.disabled = true; submitBtn.textContent = 'Consentement requis'; }
-  });
-})();
+/* RGPD : géré par Alpine.js sur #rgpd-banner */
 
 </script>
 
-<!-- ====== Bannière RGPD ====== -->
-<div id="rgpd-banner" role="dialog" aria-modal="false" aria-label="Gestion des données personnelles">
+<!-- ====== Bannière RGPD — Alpine.js ====== -->
+<div id="rgpd-banner"
+     x-data="{ show: !localStorage.getItem('rgpd_consent') }"
+     x-show="show"
+     x-cloak
+     x-transition:enter="transition ease-out duration-300"
+     x-transition:enter-start="opacity-0 translate-y-4"
+     x-transition:enter-end="opacity-100 translate-y-0"
+     x-transition:leave="transition ease-in duration-200"
+     x-transition:leave-start="opacity-100"
+     x-transition:leave-end="opacity-0"
+     role="dialog" aria-modal="false" aria-label="Gestion des données personnelles"
+     style="display:flex;">
   <p>Ce site collecte votre adresse email pour vous alerter de la disponibilité de l'iPhone 18 sur Amazon. En tant que partenaire Amazon, des clics vers Amazon.fr peuvent être mesurés. <a href="#mentions-legales">Politique de confidentialité</a></p>
   <div id="rgpd-btns">
-    <button id="rgpd-accept">Accepter</button>
-    <button id="rgpd-decline">Refuser</button>
+    <button id="rgpd-accept"
+      @click="localStorage.setItem('rgpd_consent','accepted'); show=false">Accepter</button>
+    <button id="rgpd-decline"
+      @click="localStorage.setItem('rgpd_consent','declined'); show=false;
+              document.getElementById('offre-email') && (document.getElementById('offre-email').disabled=true, document.getElementById('offre-email').placeholder='Consentement requis');
+              document.querySelector('#offre-form button[type=submit]') && (document.querySelector('#offre-form button[type=submit]').disabled=true, document.querySelector('#offre-form button[type=submit]').textContent='Consentement requis')">Refuser</button>
   </div>
 </div>
 
