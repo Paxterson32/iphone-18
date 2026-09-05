@@ -10,7 +10,7 @@ const ITEMS = [
   {
     num: '02', title: 'Dynamic Island, encore plus discrète.',
     body: 'La découpe avant évolue : plus petite, mieux intégrée, et toujours aussi intelligente pour vos notifications.',
-    img: '/iphone-18/Photos/image00003.jpeg',
+    img: '/iphone-18/Photos/image00002.jpeg',
     tag: 'Dynamic Island 2.0'
   },
   {

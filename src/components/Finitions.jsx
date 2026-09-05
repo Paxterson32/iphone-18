@@ -1,8 +1,8 @@
 const COLORS = [
-  { name: 'Dark Cherry', img: '/iphone-18/Photos/iPhone-18-Pro-dark-cherry-2.webp', alt: 'iPhone 18 Pro Dark Cherry' },
-  { name: 'Bleu clair',  img: '/iphone-18/Photos/iphone 18 bleu.jpg',               alt: 'iPhone 18 Pro Bleu clair' },
-  { name: 'Argent',      img: '/iphone-18/Photos/iphone 18 argent.jpg',              alt: 'iPhone 18 Pro Argent' },
-  { name: 'Noir Sidéral',img: '/iphone-18/Photos/iphone 18 noir.webp',              alt: 'iPhone 18 Pro Noir Sidéral' },
+  { name: 'Dark Cherry', img: '/iphone-18/Photos/iPhone-18-Pro-dark-cherry-2.webp',            alt: 'iPhone 18 Pro Dark Cherry', pos: 'center' },
+  { name: 'Bleu clair',  img: '/iphone-18/Photos/iphone 18 bleu.jpg',                          alt: 'iPhone 18 Pro Bleu clair',  pos: 'center top' },
+  { name: 'Argent',      img: '/iphone-18/Photos/iphone 18 propre.webp',                       alt: 'iPhone 18 Pro Argent',      pos: 'center' },
+  { name: 'Noir Sidéral',img: '/iphone-18/Photos/iPhone-18-Pro-Max-noir.jpg',                  alt: 'iPhone 18 Pro Noir Sidéral',pos: 'center top' },
 ]
 
 export default function Finitions() {
@@ -22,7 +22,7 @@ export default function Finitions() {
                 <img
                   src={c.img}
                   alt={c.alt}
-                  style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top' }}
+                  style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition: c.pos }}
                   loading="lazy"
                   decoding="async"
                 />

@@ -1,8 +1,8 @@
 const PHOTOS = [
   '/iphone-18/Photos/iPhone-18-Pro-Max-Dark-Cherry-et-Light-Blue.jpg',
   '/iphone-18/Photos/iPhone-18-Pro-Max-noir.jpg',
-  '/iphone-18/Photos/iphone-18-pro-29-05-1200x900.webp',
-  '/iphone-18/Photos/iphone 18 AIR 2.webp',
+  '/iphone-18/Photos/image00007.jpeg',
+  '/iphone-18/Photos/iphone 18 noir.jpg',
 ]
 
 export default function Communaute() {

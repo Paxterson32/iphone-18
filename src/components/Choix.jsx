@@ -3,8 +3,8 @@ import { useEffect } from 'react'
 const COLOR_MAP = {
   cherry: { label: 'Dark Cherry', img: '/iphone-18/Photos/iPhone-18-Pro-dark-cherry-2.webp' },
   blue:   { label: 'Bleu clair',  img: '/iphone-18/Photos/iphone 18 bleu.jpg' },
-  silver: { label: 'Argent',      img: '/iphone-18/Photos/iphone 18 argent.jpg' },
-  black:  { label: 'Noir Sidéral',img: '/iphone-18/Photos/iphone 18 noir.webp' },
+  silver: { label: 'Argent',      img: '/iphone-18/Photos/iphone 18 propre.webp' },
+  black:  { label: 'Noir Sidéral',img: '/iphone-18/Photos/iphone 18 noir.jpg' },
 }
 
 const CMP_ROWS = [
@@ -93,7 +93,7 @@ export default function Choix({ affiliate }) {
         <div className="choix-layout">
           <div className="choix-visual reveal">
             <div className="choix-halo" id="choix-halo" />
-            <div className="choix-imgstack" id="choix-imgstack">
+            <div className="choix-imgstack" id="choix-imgstack" style={{ width:'min(340px,80vw)', minHeight:420 }}>
               {Object.entries(COLOR_MAP).map(([c, info], i) => (
                 <img
                   key={c}
@@ -101,10 +101,11 @@ export default function Choix({ affiliate }) {
                   alt={`iPhone 18 Pro ${info.label}`}
                   data-c={c}
                   className={i === 0 ? 'active' : ''}
-                  width="240"
-                  height="320"
+                  width="340"
+                  height="420"
                   loading="lazy"
                   decoding="async"
+                  style={{ objectFit:'cover', objectPosition:'center top', borderRadius:18, height:'100%' }}
                 />
               ))}
             </div>

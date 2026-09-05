@@ -1,7 +1,7 @@
 const ACCESSORIES = [
-  { img:'/iphone-18/Photos/image00002.jpeg', name:'AirPods Pro 3', badge:'Compatible' },
-  { img:'/iphone-18/Photos/iphone 18 photos.jpe', name:'Apple Watch Series 10', badge:'MagSafe' },
-  { img:'/iphone-18/Photos/iphone 18 3.jpg', name:'MacBook Pro', badge:'Continuité' },
+  { img:'/iphone-18/Photos/image00002.jpeg',  name:'AirPods Pro 3',      badge:'Compatible' },
+  { img:'/iphone-18/Photos/iPhone-18-Pro-Max-noir.jpg',  name:'Apple Watch Series 10', badge:'MagSafe' },
+  { img:'/iphone-18/Photos/iPhone-18-Pro-colors-mockup-1.webp',  name:'MacBook Pro',        badge:'Continuité' },
 ]
 
 export default function Connexion() {

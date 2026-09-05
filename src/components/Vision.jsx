@@ -1,8 +1,8 @@
 const VCARDS = [
-  { img: '/iphone-18/Photos/image00004.jpeg', title: '48 Mpx Fusion', sub: 'Capteur principal' },
-  { img: '/iphone-18/Photos/image00005.jpeg', title: 'Photonique ultra', sub: 'Traitement IA en temps réel' },
-  { img: '/iphone-18/Photos/image00006.jpeg', title: 'Téléobjectif 5×', sub: 'Pro Max exclusif' },
-  { img: '/iphone-18/Photos/image00008.jpeg', title: 'Vidéo 4K 240fps', sub: 'Log & ProRes' },
+  { img: '/iphone-18/Photos/iphone 18 propre.webp',                  title: '48 Mpx Fusion',     sub: 'Capteur principal' },
+  { img: '/iphone-18/Photos/iphone 18 bleu.jpg',                     title: 'Photonique ultra',  sub: 'Traitement IA en temps réel' },
+  { img: '/iphone-18/Photos/iphone 18 noir.jpg',                     title: 'Téléobjectif 5×',   sub: 'Pro Max exclusif' },
+  { img: '/iphone-18/Photos/iPhone-18-Pro-Max-Dark-Cherry-et-Light-Blue.jpg', title: 'Vidéo 4K 240fps', sub: 'Log & ProRes' },
 ]
 
 export default function Vision() {
