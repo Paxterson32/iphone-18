@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://paxterson32.github.io/iphone-18/sitemap.xml
